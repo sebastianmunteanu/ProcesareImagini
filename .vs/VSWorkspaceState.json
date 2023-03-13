@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Algorithms",
+    "\\Algorithms\\Tools",
+    "\\Framework",
+    "\\Framework\\View",
+    "\\Framework\\ViewModel",
+    "\\Framework\\ViewModel\\Commands",
+    "\\Framework\\ViewModel\\LevelsVM"
+  ],
+  "SelectedNode": "\\Framework\\View\\MainWindow.xaml.cs",
+  "PreviewInSolutionExplorer": false
+}
