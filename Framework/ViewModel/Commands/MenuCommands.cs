@@ -673,6 +673,7 @@ namespace Framework.ViewModel
         #region Mirror image vertically
 
         private ICommand _mirrorImageVertically;
+
         public ICommand MirrorImageVertically
         {
             get
@@ -702,9 +703,7 @@ namespace Framework.ViewModel
                 ColorProcessedImage = Tools.MirrorImage(ColorInitialImage);
                 ProcessedImage = Convert(ColorProcessedImage);
             }
-            
-
-
+      
         }
 
         #endregion
@@ -809,7 +808,6 @@ namespace Framework.ViewModel
                         2,
                         Brushes.Red,
                         ScaleValue);
-
                     GrayProcessedImage = Tools.CropImage(GrayInitialImage, top, bottom);
                     ProcessedImage = Convert(GrayProcessedImage);
                 }
@@ -827,6 +825,70 @@ namespace Framework.ViewModel
         #endregion
 
         #region Pointwise operations
+        #region Test
+        private ICommand _test;
+
+        public ICommand TestCommand
+        {
+            get { 
+                if (_test == null)
+                  _test = new RelayCommand(TestImage);
+                return _test; }
+        }
+
+        private void TestImage (object parameter)
+        {
+            if (InitialImage == null)
+            {
+                MessageBox.Show("Intoduceti o imagine");
+                return;
+            }
+            ClearProcessedCanvas(parameter);
+
+            if (GrayInitialImage != null)
+            {
+                
+            }
+        }
+        #endregion
+
+        #region Color Histogram Equalization
+        private ICommand _histogramEqualization;
+
+        public ICommand ColorHistogramEqualization
+        {
+            get
+            {
+                if (_histogramEqualization == null)
+                    _histogramEqualization = new RelayCommand(ColorHistogramEqualizationMethod);
+                return _histogramEqualization;
+            }
+        }
+
+        private void ColorHistogramEqualizationMethod(object parameter)
+        {
+            if (InitialImage == null)
+            {
+                MessageBox.Show("Intoduceti o imagine");
+                return;
+            }
+
+
+            //ClearProcessedCanvas(parameter);
+
+            if (GrayInitialImage != null)
+            {
+                MessageBox.Show("Introduceti o imagine color pentru procesare");
+                return;
+            }
+
+            else if (ColorInitialImage != null)
+            {
+                ColorProcessedImage = Tools.ColorHistogramEqualization(ColorInitialImage);
+                ProcessedImage = Convert(ColorProcessedImage);
+            }
+        }
+        #endregion
         #endregion
 
         #region Thresholding
@@ -882,7 +944,5 @@ namespace Framework.ViewModel
             ClearProcessedCanvas(canvases[1] as Canvas);
         }
         #endregion
-
-        
     }
 }

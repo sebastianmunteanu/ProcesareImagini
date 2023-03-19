@@ -184,14 +184,12 @@
                           CommandParameter="{Binding ElementName=canvasProcessedImage}">
                 </MenuItem>
 
-                <Separator/>
                 <MenuItem Header="Binary" 
                           Foreground="Black"
                           Command="{Binding Path=MenuCommands.BinaryImage}"
                           CommandParameter="{Binding ElementName=canvasProcessedImage}">
                 </MenuItem>
 
-                <Separator/>
                 <MenuItem Header="Crop image" 
                     Foreground="Black"
                     Command="{Binding Path=MenuCommands.CropImage}">
@@ -209,7 +207,15 @@
             <MenuItem Header="Pointwise operations"
                       Background="{Binding Path=Theme.MenuItemBackgroundColor}"
                       Foreground="{Binding Path=Theme.MenuItemForegroundColor}">
-
+                <MenuItem Header="Test"
+                          Foreground="Black"
+                          Command="{Binding Path=MenuCommands.TestCommand}">
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Color Histogram Equalization"
+                          Foreground="Black"
+                          Command="{Binding Path=MenuCommands.ColorHistogramEqualization}">
+                </MenuItem>
             </MenuItem>
 
             <MenuItem Header="Thresholding"

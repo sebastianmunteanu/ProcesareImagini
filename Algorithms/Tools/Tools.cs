@@ -2,6 +2,7 @@
 using Emgu.CV;
 using Emgu.CV.Structure;
 using System;
+using System.Windows.Forms;
 using ZedGraph;
 
 namespace Algorithms.Tools
@@ -239,5 +240,26 @@ namespace Algorithms.Tools
 
         #endregion
 
+
+        #region Teme
+
+        #region Tema1-Ex13
+        public static Image<Bgr, byte> ColorHistogramEqualization(Image<Bgr, byte> inputImage)
+        {
+            MessageBox.Show("in tools");
+            Image<Bgr, byte> result = new Image<Bgr, byte>(inputImage.Size);
+            for (int y = 0; y < result.Height; y++)
+            {
+                for (int x = 0; x < result.Width; x++)
+                {
+                    
+                }
+            }
+            return result;
+        }
+
+        #endregion
+
+        #endregion
     }
 }
